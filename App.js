@@ -1,20 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import Home from './src/pages/home'
+import Fib from './src/pages/fibonacci/fibonacci.js'
+import Clas from './src/pages/classificador/classificador.js'
+import Fax from './src/pages/faxina/faxina.js'
+import Val from './src/pages/validade/validade.js'
+import Mold from './src/pages/molduras/molduras.js'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const Stack = createStackNavigator()
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false, title: '' }}
+        />
+        <Stack.Screen
+          name="Fibonacci"
+          component={Fib}
+          options={{ headerShown: false, title: '' }}
+        />
+        <Stack.Screen
+          name="Classificador"
+          component={Clas}
+          options={{ headerShown: false, title: '' }}
+        />
+        <Stack.Screen
+          name="Faxina"
+          component={Fax}
+          options={{ headerShown: false, title: '' }}
+        />
+        <Stack.Screen
+          name="Validade"
+          component={Val}
+          options={{ headerShown: false, title: '' }}
+        />
+        <Stack.Screen
+          name="Molduras"
+          component={Mold}
+          options={{ headerShown: false, title: '' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
