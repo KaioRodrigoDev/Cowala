@@ -12,6 +12,7 @@
     type="text/javascript"
   ></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
   <body>
     <header id="header">
       <img src="./src/Logo.png" alt="Logo cowala" />
@@ -36,7 +37,7 @@
 
         <div class="div">
           <label>Celular : </label>
-          <input type="tel" name="celular" id="celular" required />
+          <input type="text" name="celular" id="celular" required />
         </div>
 
         <div class="div div2">
@@ -52,6 +53,7 @@
     </form>
 
     <script>
+      $('#telefone, #celular').mask('(00) 0000-0000')
       $(document).ready(function () {
         var nome = localStorage.getItem('nome')
         var profissao = localStorage.getItem('profissao')
